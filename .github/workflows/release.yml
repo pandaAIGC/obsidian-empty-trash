@@ -39,6 +39,10 @@ jobs:
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v2
         with:
+          body: |
+            Empty Trash removes every item inside the local `.trash` folder in one click, without deleting items one by one.
+
+            This release includes the required plugin assets for manual installation and community review.
           files: |
             manifest.json
             main.js

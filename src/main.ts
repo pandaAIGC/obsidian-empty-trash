@@ -18,6 +18,8 @@ interface TrashItems {
   folders: string[];
 }
 
+type PersistedSettings = Partial<Record<keyof EmptyTrashSettings, unknown>>;
+
 const DEFAULT_SETTINGS: EmptyTrashSettings = {
   confirmBeforeEmpty: true,
   showRibbonIcon: true,
@@ -50,7 +52,8 @@ export default class EmptyTrashPlugin extends Plugin {
   }
 
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    const loaded = (await this.loadData()) as unknown;
+    this.settings = normalizeSettings(loaded);
   }
 
   async saveSettings() {
@@ -189,6 +192,25 @@ export default class EmptyTrashPlugin extends Plugin {
       new EmptyTrashConfirmModal(this.app, items, resolve).open();
     });
   }
+}
+
+function normalizeSettings(data: unknown): EmptyTrashSettings {
+  if (!data || typeof data !== "object") {
+    return { ...DEFAULT_SETTINGS };
+  }
+
+  const persisted = data as PersistedSettings;
+
+  return {
+    confirmBeforeEmpty:
+      typeof persisted.confirmBeforeEmpty === "boolean"
+        ? persisted.confirmBeforeEmpty
+        : DEFAULT_SETTINGS.confirmBeforeEmpty,
+    showRibbonIcon:
+      typeof persisted.showRibbonIcon === "boolean"
+        ? persisted.showRibbonIcon
+        : DEFAULT_SETTINGS.showRibbonIcon,
+  };
 }
 
 class EmptyTrashConfirmModal extends Modal {
