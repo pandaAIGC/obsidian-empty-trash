@@ -9,7 +9,7 @@ Obsidian can move deleted files to a hidden `.trash` folder. This plugin adds a 
 ## Usage
 
 1. Set Obsidian's deleted-file behavior to use Obsidian trash: `Settings -> Files and links -> Deleted files -> Move to Obsidian trash`.
-2. Run `Empty Trash: Empty Obsidian trash` from the command palette, or click the trash icon in the ribbon.
+2. Run `Empty Trash: Empty Obsidian trash` from the command palette, or click the eraser icon in the ribbon.
 3. Confirm once to permanently delete all files and folders currently inside `.trash`.
 
 ## Notes

@@ -65,7 +65,7 @@ export default class EmptyTrashPlugin extends Plugin {
     }
 
     this.ribbonIconEl = this.addRibbonIcon(
-      "trash-2",
+      "eraser",
       "Empty Obsidian trash",
       () => {
         void this.emptyTrash();
@@ -273,7 +273,7 @@ class EmptyTrashSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName("Show ribbon icon")
-      .setDesc("Add a trash icon to the left ribbon for one-click access.")
+      .setDesc("Add an eraser icon to the left ribbon for one-click access.")
       .addToggle((toggle) =>
         toggle
           .setValue(this.plugin.settings.showRibbonIcon)

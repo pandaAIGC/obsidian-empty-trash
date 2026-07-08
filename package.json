@@ -1,6 +1,6 @@
 {
   "name": "obsidian-empty-trash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Obsidian plugin to empty the local .trash folder with one command.",
   "main": "main.js",
   "repository": {
