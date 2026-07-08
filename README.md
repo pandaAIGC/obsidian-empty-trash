@@ -2,6 +2,8 @@
 
 Empty Trash is a small Obsidian plugin that permanently removes every item inside the vault's `.trash` folder in one click.
 
+Plugin ID: `empty-trash`
+
 ## Why
 
 Obsidian can move deleted files to a hidden `.trash` folder. This plugin adds a direct way to empty that folder at once, without deleting files one by one.
