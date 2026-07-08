@@ -1,0 +1,33 @@
+{
+  "name": "obsidian-empty-trash",
+  "version": "0.1.0",
+  "description": "Obsidian plugin to empty the local .trash folder with one command.",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pandaAIGC/obsidian-empty-trash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pandaAIGC/obsidian-empty-trash/issues"
+  },
+  "homepage": "https://github.com/pandaAIGC/obsidian-empty-trash#readme",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "trash"
+  ],
+  "author": "pandaAIGC",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "builtin-modules": "^5.0.0",
+    "esbuild": "^0.25.6",
+    "obsidian": "^1.8.7",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  }
+}

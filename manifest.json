@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-empty-trash",
+  "name": "Empty Trash",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Empty Obsidian's local .trash folder with one command.",
+  "author": "pandaAIGC",
+  "isDesktopOnly": false
+}
